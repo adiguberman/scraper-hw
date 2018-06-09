@@ -19,7 +19,7 @@
                 <Pattern>${LOG_PATTERN}</Pattern>
             </PatternLayout>
             <Policies>
-                <SizeBasedTriggeringPolicy size="10MB" />
+                <SizeBasedTriggeringPolicy size="10MB"/>
             </Policies>
             <DefaultRolloverStrategy max="10"/>
         </RollingFile>
@@ -29,14 +29,14 @@
                 <Pattern>${LOG_PATTERN_APP_DETAILS}</Pattern>
             </PatternLayout>
             <Policies>
-                <SizeBasedTriggeringPolicy size="10MB" />
+                <SizeBasedTriggeringPolicy size="10MB"/>
             </Policies>
             <DefaultRolloverStrategy max="10"/>
         </RollingFile>
     </Appenders>
     <Loggers>
         <Logger name="AppDetails" level="info" additivity="true">
-            <appender-ref ref="FileAppDetailsAppender" level="info" />
+            <appender-ref ref="FileAppDetailsAppender" level="info"/>
         </Logger>
         <Root level="info">
             <AppenderRef ref="ConsoleAppender"/>

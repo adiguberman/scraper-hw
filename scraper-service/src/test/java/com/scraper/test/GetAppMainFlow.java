@@ -42,13 +42,13 @@ public class GetAppMainFlow {
 
         String valueString = valueMatcher.group();
         String finalString = formatString(valueString);
-        
+
         Object obj = parser.parse(finalString);
         JSONArray array = (JSONArray) obj;
 
-        String title = parseResult(TITLE,array);
-        String email = parseResult(EMAIL,array);
-        String icon = parseResult(ICON,array);
+        String title = parseResult(TITLE, array);
+        String email = parseResult(EMAIL, array);
+        String icon = parseResult(ICON, array);
 
         System.out.println(title);
         System.out.println(email);
@@ -58,15 +58,15 @@ public class GetAppMainFlow {
     private String parseResult(int[] mapping, JSONArray array) {
         JSONArray arrayForCalc = array;
         int i;
-        for (i = 0; i < mapping.length -1 ; i++) {
+        for (i = 0; i < mapping.length - 1; i++) {
             arrayForCalc = (JSONArray) arrayForCalc.get(mapping[i]);
         }
         int index = mapping[i];
-        return  arrayForCalc.get(index).toString();
+        return arrayForCalc.get(index).toString();
     }
 
     private String formatString(String valueString) {
-        String trim = valueString.substring(PREFIX.length() -1,valueString.length() + 1 - SUFFIX.length());
+        String trim = valueString.substring(PREFIX.length() - 1, valueString.length() + 1 - SUFFIX.length());
         return trim;
     }
 

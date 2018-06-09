@@ -17,11 +17,10 @@ import java.util.concurrent.TimeUnit;
 
 public class ProxyHolder {
 
+    private static final Logger logger = LogManager.getLogger(ProxyHolder.class);
     private final String proxiesFilePath;
     private final boolean useProxy;
-
     private ConcurrentLinkedQueue<ProxyString> proxies = new ConcurrentLinkedQueue<>();
-    private static final Logger logger = LogManager.getLogger(ProxyHolder.class);
 
     @Autowired
     public ProxyHolder(@Value("${proxies.file.path}") final String proxiesFilePath, @Value("${use.proxy}") final String useProxy) throws Exception {

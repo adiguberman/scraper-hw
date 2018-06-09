@@ -12,7 +12,7 @@ public class ScraperConstants {
     public static final int[] ICON = {0, 12, 1, 3, 2};
     public static final int[] TITLE = {0, 0, 0};
 
-    public static final String APP_DETAILS_LOGGER_NAME= "AppDetails";
+    public static final String APP_DETAILS_LOGGER_NAME = "AppDetails";
     public static final String DELIMITER = ",";
 
 }

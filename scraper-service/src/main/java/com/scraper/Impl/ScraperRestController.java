@@ -1,19 +1,21 @@
 package com.scraper.Impl;
 
-import org.json.simple.parser.ParseException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
 public class ScraperRestController {
     public static final String HTTPS_PLAY_GOOGLE_COM_STORE_APPS_DETAILS_ID = "https://play.google.com/store/apps/details?id=";
-    Logger logger = LogManager.getLogger(this.getClass());
-
     private final ScraperService scraperService;
+    Logger logger = LogManager.getLogger(this.getClass());
 
 
     @Autowired
@@ -29,7 +31,6 @@ public class ScraperRestController {
         scraperService.addAppDetailsToOutput(appid);
         return appid;
     }
-
 
 
 }
