@@ -13,7 +13,7 @@
             <PatternLayout pattern="${LOG_PATTERN}"/>
         </Console>
 
-        <RollingFile name="FileAppender" fileName="logs/scraper.log"
+        <RollingFile name="FileAppender" fileName="logs/runner.log"
                      filePattern="logs/scraper-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout>
                 <Pattern>${LOG_PATTERN}</Pattern>
@@ -23,21 +23,8 @@
             </Policies>
             <DefaultRolloverStrategy max="10"/>
         </RollingFile>
-        <RollingFile name="FileAppDetailsAppender" fileName="logs/appDetails.log"
-                     filePattern="logs/appDetails-%d{yyyy-MM-dd}-%i.log">
-            <PatternLayout>
-                <Pattern>${LOG_PATTERN_APP_DETAILS}</Pattern>
-            </PatternLayout>
-            <Policies>
-                <SizeBasedTriggeringPolicy size="10MB" />
-            </Policies>
-            <DefaultRolloverStrategy max="10"/>
-        </RollingFile>
     </Appenders>
     <Loggers>
-        <Logger name="AppDetails" level="info" additivity="true">
-            <appender-ref ref="FileAppDetailsAppender" level="info" />
-        </Logger>
         <Root level="info">
             <AppenderRef ref="ConsoleAppender"/>
             <AppenderRef ref="FileAppender"/>
